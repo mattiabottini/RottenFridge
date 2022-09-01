@@ -9,6 +9,7 @@
     android:padding="30dp"
     >
 
+
     <EditText
         android:id="@+id/product_name"
         android:layout_width="match_parent"

@@ -7,9 +7,11 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_add.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.10303789539617914" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.23655992908758539" />
         <entry key="app/src/main/res/layout/activity_products.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/appbar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/product_card.xml" value="0.19666290283203125" />
+        <entry key="app/src/main/res/layout/product_row.xml" value="0.5855972290039063" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.1" />
       </map>
     </option>

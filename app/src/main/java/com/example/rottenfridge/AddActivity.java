@@ -3,6 +3,7 @@ package com.example.rottenfridge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,6 +52,8 @@ public class AddActivity extends AppCompatActivity {
                 myDB.addProduct(name_input.getText().toString().trim(),
                         expiration_input.getText().toString().trim(),
                         Integer.valueOf(quantity_input.getText().toString().trim()));
+                Intent intent= new Intent(AddActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
