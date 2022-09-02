@@ -73,4 +73,20 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+    void updateData(String row_id, String name, String expiration, String quantity){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_PRODUCTNAME, name);
+        cv.put(COLUMN_EXPIRATION, expiration);
+        cv.put(COLUMN_QUANTITY, quantity);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        if (result==-1){
+            Toast.makeText(context, "Failed to Update", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully Updated", Toast.LENGTH_SHORT).show();
+
+        }
+    }
 }
