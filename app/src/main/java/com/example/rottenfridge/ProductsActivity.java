@@ -8,13 +8,20 @@ import androidx.cardview.widget.CardView;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+import java.io.InputStream;
+import java.net.URL;
 
 public class ProductsActivity extends AppCompatActivity {
 
@@ -24,6 +31,7 @@ public class ProductsActivity extends AppCompatActivity {
     String id, name, expiration, quantity;
     private Toolbar toolbar;
     private ImageButton modifyButton, deleteButton;
+    ImageView imgProd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +47,7 @@ public class ProductsActivity extends AppCompatActivity {
         prod_name = findViewById(R.id.Text1);
         prod_expiration = findViewById(R.id.Text2b);
         prod_quantity = findViewById(R.id.Text3b);
+        imgProd = findViewById(R.id.prodImage);
         modifyButton = findViewById(R.id.imageButton);
         deleteButton = findViewById(R.id.imageButtonDelete);
         modifyButton.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +71,9 @@ public class ProductsActivity extends AppCompatActivity {
         });
 
         getAndSetIntentData();
+        String url = "https://upload.wikimedia.org/wikipedia/commons/6/69/" + prod_name.getText().toString() + ".png";
+        System.out.println(url);
+        Picasso.get().load(url).into(imgProd);
     }
 
     void getAndSetIntentData(){
@@ -106,4 +118,5 @@ public class ProductsActivity extends AppCompatActivity {
 
         builder.create().show();
     }
+
 }
