@@ -8,8 +8,8 @@
         app:showAsAction="ifRoom"
         />
     <item
-        android:title="Delete"
-        android:icon="@drawable/ic_baseline_delete_24"
+        android:title="Delete All"
+        android:icon="@drawable/ic_round_delete_sweep_24"
         android:id="@+id/delete"
         app:showAsAction="ifRoom"
         />

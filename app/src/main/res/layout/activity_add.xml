@@ -9,6 +9,10 @@
     android:padding="30dp"
     >
 
+    <include
+        android:id="@+id/Toolbar"
+        layout="@layout/appbar" />
+
 
     <EditText
         android:id="@+id/product_name"

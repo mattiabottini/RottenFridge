@@ -9,11 +9,12 @@
         <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_round_create_24.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_add.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23655992908758539" />
         <entry key="app/src/main/res/layout/activity_products.xml" value="0.16210739614994935" />
-        <entry key="app/src/main/res/layout/activity_update.xml" value="0.11574074074074074" />
+        <entry key="app/src/main/res/layout/activity_update.xml" value="0.16834389015480322" />
         <entry key="app/src/main/res/layout/appbar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/product_card.xml" value="0.19666290283203125" />
         <entry key="app/src/main/res/layout/product_row.xml" value="0.25" />

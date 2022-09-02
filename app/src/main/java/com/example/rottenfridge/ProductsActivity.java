@@ -1,10 +1,12 @@
 package com.example.rottenfridge;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -38,6 +40,7 @@ public class ProductsActivity extends AppCompatActivity {
         prod_expiration = findViewById(R.id.Text2b);
         prod_quantity = findViewById(R.id.Text3b);
         modifyButton = findViewById(R.id.imageButton);
+        deleteButton = findViewById(R.id.imageButtonDelete);
         modifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +53,13 @@ public class ProductsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        deleteButton = findViewById(R.id.imageButtonDelete);
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                confirmDialog();
+            }
+        });
 
         getAndSetIntentData();
     }
@@ -73,5 +82,28 @@ public class ProductsActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No Data.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    void confirmDialog (){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete " + name);
+        builder.setMessage("Are you sure you want to remove " + name.toUpperCase() + " ?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                MyDatabaseHelper mydb = new MyDatabaseHelper(ProductsActivity.this);
+                mydb.deleteOneProduct(id);
+                Intent intent = new Intent(ProductsActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+
+        builder.create().show();
     }
 }

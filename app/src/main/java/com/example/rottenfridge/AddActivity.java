@@ -1,9 +1,11 @@
 package com.example.rottenfridge;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +21,7 @@ public class AddActivity extends AppCompatActivity {
     final Calendar myCalendar= Calendar.getInstance();
     EditText name_input, expiration_input, quantity_input;
     Button add_button;
-
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,12 @@ public class AddActivity extends AppCompatActivity {
         expiration_input=findViewById(R.id.product_expirationDate);
         quantity_input=findViewById(R.id.product_quantity);
         add_button=findViewById(R.id.add_Button);
+        toolbar=findViewById(R.id.Toolbar);
+        toolbar.setTitle("Add Product");
+        toolbar.setBackground(Drawable.createFromPath("#f2f4f8"));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -54,6 +62,7 @@ public class AddActivity extends AppCompatActivity {
                         Integer.valueOf(quantity_input.getText().toString().trim()));
                 Intent intent= new Intent(AddActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

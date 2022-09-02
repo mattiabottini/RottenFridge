@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     MyDatabaseHelper myDB;
     ArrayList <String> product_id, product_name, product_expiration, product_quantity;
     CustomAdapter customAdapter;
+    ImageView empty;
+    TextView textEmpty;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +51,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerView);
         toolbar=findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
+        empty = findViewById(R.id.imageView);
+        textEmpty = findViewById(R.id.textView);
         myDB = new MyDatabaseHelper(MainActivity.this);
         product_id = new ArrayList<>();
         product_name = new ArrayList<>();
         product_expiration = new ArrayList<>();
         product_quantity = new ArrayList<>();
-
         storeDataInArrays();
         customAdapter= new CustomAdapter(MainActivity.this, product_id, product_name, product_expiration, product_quantity);
         recyclerView.setAdapter(customAdapter);
@@ -72,10 +77,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.add:
                 Intent intent= new Intent(MainActivity.this, AddActivity.class);
                 startActivity(intent);
+                finish();
                 break;
 
             case R.id.delete:
-                Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
+                    confirmDialog();
                 break;
 
             case R.id.settings:
@@ -90,13 +96,15 @@ public class MainActivity extends AppCompatActivity {
             card.setOnClickListener((view) -> {
                 Intent i= new Intent(getApplicationContext(), ProductsActivity.class);
                 startActivity(i);
+                finish();
             });
     }
 
     void storeDataInArrays () {
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount()==0){
-            Toast.makeText(this, "Nessun Prodotto", Toast.LENGTH_SHORT).show();
+            empty.setVisibility(View.VISIBLE);
+            textEmpty.setVisibility(View.VISIBLE);
         } else {
             while (cursor.moveToNext()){
                 product_id.add(cursor.getString(0));
@@ -104,8 +112,34 @@ public class MainActivity extends AppCompatActivity {
                 product_expiration.add(cursor.getString(2));
                 product_quantity.add(cursor.getString(3));
             }
+            empty.setVisibility(View.GONE);
+            textEmpty.setVisibility(View.GONE);
         }
     }
+
+    void confirmDialog (){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete All");
+        builder.setMessage("Are you sure you want to remove all products?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                MyDatabaseHelper mydb = new MyDatabaseHelper(MainActivity.this);
+                mydb.deleteAllProducts();
+                Intent intent= new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+
+        builder.create().show();
+    }
+
     /*private void scanCode() {
         ScanOptions options = new ScanOptions();
         options.setPrompt("Volume up");

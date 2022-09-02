@@ -1,9 +1,12 @@
 package com.example.rottenfridge;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +24,8 @@ public class UpdateActivity extends AppCompatActivity {
     Button updateButton;
     String id, name, expiration, quantity;
     final Calendar myCalendar= Calendar.getInstance();
+    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,12 @@ public class UpdateActivity extends AppCompatActivity {
 
         updateButton = findViewById(R.id.update_Button);
         getAndSetIntentData();
+        toolbar=findViewById(R.id.Toolbar);
+        toolbar.setTitle("Update Product");
+        toolbar.setBackground(Drawable.createFromPath("#f2f4f8"));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
