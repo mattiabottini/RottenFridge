@@ -71,7 +71,7 @@ public class ProductsActivity extends AppCompatActivity {
         });
 
         getAndSetIntentData();
-        String url = "https://upload.wikimedia.org/wikipedia/commons/6/69/" + prod_name.getText().toString() + ".png";
+        String url = "https://storage.googleapis.com/fleet-volt-352308.appspot.com/" + prod_name.getText().toString().toLowerCase() + ".png";
         System.out.println(url);
         Picasso.get().load(url).into(imgProd);
     }

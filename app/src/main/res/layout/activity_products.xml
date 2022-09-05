@@ -57,7 +57,7 @@
             android:layout_below="@+id/Text1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="Scadenza: "
+            android:text="Expires: "
             android:textSize="30dp"
             android:translationX="-85dp" />
 
@@ -70,7 +70,7 @@
             android:text="Scad"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:translationX="200dp" />
+            android:translationX="180dp" />
 
         <TextView
             android:id="@+id/Text3"
@@ -79,7 +79,7 @@
             android:layout_below="@+id/Text2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="Quantità: "
+            android:text="Quantity: "
             android:textSize="30dp"
             android:translationX="-60dp" />
 
