@@ -1,4 +1,4 @@
-package com.example.rottenfridge;
+package com.MattiaBottini.rottenfridge;
 
 import org.junit.Test;
 

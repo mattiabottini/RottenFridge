@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddActivity"
+    tools:context="com.MattiaBottini.rottenfridge.AddActivity"
     android:background="#f2f4f8"
     android:padding="30dp"
     >

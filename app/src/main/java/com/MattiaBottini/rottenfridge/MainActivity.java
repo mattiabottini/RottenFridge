@@ -1,29 +1,27 @@
-package com.example.rottenfridge;
-import androidx.activity.result.ActivityResultLauncher;
+package com.MattiaBottini.rottenfridge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.MattiaBottini.rottenfridge.R;
 
 import java.util.ArrayList;
 
@@ -78,12 +76,12 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 break;
 
-            case R.id.delete:
+            case R.id.deleteAll:
                     confirmDialog();
                 break;
 
-            case R.id.settings:
-                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+            case R.id.search:
+                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);

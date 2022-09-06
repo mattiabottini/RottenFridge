@@ -1,6 +1,5 @@
-package com.example.rottenfridge;
+package com.MattiaBottini.rottenfridge;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -13,6 +12,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.MattiaBottini.rottenfridge.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

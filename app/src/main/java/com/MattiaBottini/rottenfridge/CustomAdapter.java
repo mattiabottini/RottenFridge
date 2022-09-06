@@ -1,28 +1,23 @@
-package com.example.rottenfridge;
+package com.MattiaBottini.rottenfridge;
 
 import android.annotation.SuppressLint;
-import android.content.ClipData;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.MattiaBottini.rottenfridge.R;
 import com.squareup.picasso.Picasso;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
@@ -30,6 +25,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private Context context;
     private ArrayList product_images, product_id, product_name, product_expiration, product_quantity;
     int position;
+    Animation translate_animation;
 
     CustomAdapter (Context context, ArrayList product_id, ArrayList product_name, ArrayList product_expiration,
                    ArrayList product_quantity) {
@@ -93,6 +89,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             product_expirationDate_txt = itemView.findViewById(R.id.product_expirationDate_txt);
             product_quantity_txt = itemView.findViewById(R.id.product_quantity_txt);
             mainLayout = itemView.findViewById(R.id.mainLayout);
+            translate_animation= AnimationUtils.loadAnimation(context, R.anim.translate_animation);
+            mainLayout.setAnimation(translate_animation);
         }
     }
 
