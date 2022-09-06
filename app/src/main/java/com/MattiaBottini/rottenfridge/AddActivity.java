@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -56,13 +57,20 @@ public class AddActivity extends AppCompatActivity {
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MyDatabaseHelper myDB = new MyDatabaseHelper(AddActivity.this);
-                myDB.addProduct(name_input.getText().toString().trim(),
-                        expiration_input.getText().toString().trim(),
-                        Integer.valueOf(quantity_input.getText().toString().trim()));
-                Intent intent= new Intent(AddActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                if ((name_input.getText().toString().trim().length() > 0) &&
+                        (expiration_input.getText().toString().trim().length() > 0) &&
+                        (quantity_input.getText().toString().trim().length() > 0)) {
+                    MyDatabaseHelper myDB = new MyDatabaseHelper(AddActivity.this);
+                    myDB.addProduct(name_input.getText().toString().trim(),
+                            expiration_input.getText().toString().trim(),
+                            Integer.valueOf(quantity_input.getText().toString().trim()));
+                    Intent intent = new Intent(AddActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    Toast.makeText(AddActivity.this, "You must complete all the fields!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

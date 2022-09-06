@@ -2,21 +2,29 @@ package com.MattiaBottini.rottenfridge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +33,7 @@ import com.MattiaBottini.rottenfridge.R;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     //Button btn_scan;
     //ImageButton btn= findViewById(R.id.ivHomebt1);
@@ -39,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     CustomAdapter customAdapter;
     ImageView empty;
     TextView textEmpty;
+    AudioManager audioManager;
+    SearchView searchView;
+    boolean audioOff=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar=findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
         empty = findViewById(R.id.imageView);
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         textEmpty = findViewById(R.id.textView);
         myDB = new MyDatabaseHelper(MainActivity.this);
         product_id = new ArrayList<>();
@@ -78,10 +90,6 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.deleteAll:
                     confirmDialog();
-                break;
-
-            case R.id.search:
-                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -135,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
         builder.create().show();
     }
+
 
     /*private void scanCode() {
         ScanOptions options = new ScanOptions();

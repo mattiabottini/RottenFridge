@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,12 +21,12 @@ import com.MattiaBottini.rottenfridge.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     private Context context;
-    private ArrayList product_images, product_id, product_name, product_expiration, product_quantity;
-    int position;
+    private ArrayList product_id, product_name, product_expiration, product_quantity;
     Animation translate_animation;
 
     CustomAdapter (Context context, ArrayList product_id, ArrayList product_name, ArrayList product_expiration,
@@ -34,7 +36,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.product_name=product_name;
         this.product_expiration=product_expiration;
         this.product_quantity=product_quantity;
-
     }
 
     @NonNull
@@ -71,6 +72,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public int getItemCount() {
         return product_id.size();
     }
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 

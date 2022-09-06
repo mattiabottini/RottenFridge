@@ -90,6 +90,17 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    Cursor searchProduct (String searchText) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE "+ COLUMN_PRODUCTNAME+ " like " + "'"+searchText+"%'";
+        System.out.println(query);
+        Cursor cursor = null;
+        if (db!=null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
     void deleteOneProduct (String row_id) {
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});

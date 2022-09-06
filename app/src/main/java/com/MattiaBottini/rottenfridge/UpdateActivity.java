@@ -64,10 +64,17 @@ public class UpdateActivity extends AppCompatActivity {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MyDatabaseHelper mydb = new MyDatabaseHelper(UpdateActivity.this);
-                mydb.updateData(id, name_input.getText().toString(), exp_input.getText().toString(),quantity_input.getText().toString());
-                Intent intent= new Intent(UpdateActivity.this, MainActivity.class);
-                startActivity(intent);
+                if ((name_input.getText().toString().trim().length() > 0) &&
+                        (exp_input.getText().toString().trim().length() > 0) &&
+                        (quantity_input.getText().toString().trim().length() > 0)) {
+                    MyDatabaseHelper mydb = new MyDatabaseHelper(UpdateActivity.this);
+                    mydb.updateData(id, name_input.getText().toString(), exp_input.getText().toString(), quantity_input.getText().toString());
+                    Intent intent = new Intent(UpdateActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(UpdateActivity.this, "You must complete all the fields!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
