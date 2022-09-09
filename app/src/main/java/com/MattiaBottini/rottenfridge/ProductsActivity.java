@@ -21,6 +21,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.MattiaBottini.rottenfridge.R;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.Locale;
@@ -35,11 +42,61 @@ public class ProductsActivity extends AppCompatActivity {
     ImageView imgProd;
     TextToSpeech textToSpeech;
     AudioManager audioManager;
+    private AdView adView;
     boolean audioOff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
+
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+                Toast.makeText(ProductsActivity.this, "Ad clicked", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+                Toast.makeText(ProductsActivity.this, "Ad closed", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                // Code to be executed when an ad request fails.
+                Toast.makeText(ProductsActivity.this, "Failed to load Ad", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdImpression() {
+                // Code to be executed when an impression is recorded
+                // for an ad.
+            }
+
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                Toast.makeText(ProductsActivity.this, "Ad loaded", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                Toast.makeText(ProductsActivity.this, "Ad opened", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         toolbar=findViewById(R.id.Toolbar);
         toolbar.setTitle("");
