@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
+        android:layout_marginEnd="70dp"
         android:ems="10"
         android:hint="Product Name"
         android:inputType="textPersonName"
@@ -47,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="70dp"
         android:ems="10"
         android:hint="Product Quantity"
         android:inputType="number"
@@ -65,5 +67,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_quantity" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/micButtonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="13dp"
+        android:clickable="true"
+        android:backgroundTint="@color/lightYellow"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/product_expirationDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/product_name"
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar"
+        app:srcCompat="@drawable/ic_baseline_mic_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/micButtonQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:backgroundTint="@color/lightYellow"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/update_Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/product_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/product_expirationDate"
+        app:srcCompat="@drawable/ic_baseline_mic_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
