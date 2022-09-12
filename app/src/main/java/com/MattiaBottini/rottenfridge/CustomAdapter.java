@@ -52,7 +52,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.product_name_txt.setText(String.valueOf(product_name.get(position)));
         String url = "https://storage.googleapis.com/fleet-volt-352308.appspot.com/" + holder.product_name_txt.getText().toString().toLowerCase() + ".png";
         System.out.println(url);
-        Picasso.get().load(url).error(R.drawable.ic_prodotti).into(holder.product_image);
+        Picasso.get().load(url).error(R.mipmap.ic_prod).into(holder.product_image);
         holder.product_expirationDate_txt.setText(String.valueOf(product_expiration.get(position)));
         holder.product_quantity_txt.setText(String.valueOf(product_quantity.get(position)));
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +87,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             product_image = itemView.findViewById(R.id.imageViewProduct);
             String url = "https://upload.wikimedia.org/wikipedia/commons/6/69/" + product_name_txt.getText().toString() + ".png";
             System.out.println(url);
-            Picasso.get().load(url).placeholder(R.drawable.ic_prodotti).error(R.drawable.ic_prodotti).into(product_image);
+            Picasso.get().load(url).placeholder(R.mipmap.ic_prod).error(R.mipmap.ic_prod).into(product_image);
             product_expirationDate_txt = itemView.findViewById(R.id.product_expirationDate_txt);
             product_quantity_txt = itemView.findViewById(R.id.product_quantity_txt);
             mainLayout = itemView.findViewById(R.id.mainLayout);

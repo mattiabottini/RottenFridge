@@ -24,6 +24,9 @@
         <entry key="app/src/main/res/layout/product_row.xml" value="0.15885416666666666" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_product.xml" value="0.1703125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_prod.xml" value="0.1095" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_prod2.xml" value="0.1095" />
+        <entry key="app/src/main/res/mipmap-xhdpi/ic_prod2.xml" value="0.1095" />
       </map>
     </option>
   </component>
