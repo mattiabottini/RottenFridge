@@ -58,7 +58,7 @@ public class ProductsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
 
-        adView = findViewById(R.id.adView);
+       /* adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -100,7 +100,7 @@ public class ProductsActivity extends AppCompatActivity {
                 // covers the screen.
             }
         });
-
+        */
 
         toolbar=findViewById(R.id.Toolbar);
         toolbar.setTitle("");

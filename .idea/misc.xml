@@ -5,20 +5,31 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.109" />
+        <entry key="app/src/main/res/drawable/custom_123_icon.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/custom_calendar_icon.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/custom_food_icon.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/custom_input.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/custom_input_date.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/ic_baseline_123_24.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/ic_baseline_123_focused.xml" value="0.1095" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/ic_baseline_calendar_month_focused.xml" value="0.1095" />
         <entry key="app/src/main/res/drawable/ic_baseline_create_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_fastfood_24.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/ic_baseline_fastfood_focused.xml" value="0.1095" />
         <entry key="app/src/main/res/drawable/ic_baseline_mic_24.xml" value="0.1095" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_volume_off_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/ic_prodotti.xml" value="0.1095" />
         <entry key="app/src/main/res/drawable/ic_round_create_24.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_add.xml" value="0.16900177001953126" />
+        <entry key="app/src/main/res/layout/activity_add.xml" value="0.457916259765625" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_products.xml" value="0.13714285714285715" />
-        <entry key="app/src/main/res/layout/activity_update.xml" value="0.16834389015480322" />
+        <entry key="app/src/main/res/layout/activity_update.xml" value="0.5026273374204282" />
         <entry key="app/src/main/res/layout/appbar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/product_card.xml" value="0.19666290283203125" />
         <entry key="app/src/main/res/layout/product_row.xml" value="0.15885416666666666" />

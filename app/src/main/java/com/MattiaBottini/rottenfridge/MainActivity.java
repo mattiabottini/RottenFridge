@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        adView = findViewById(R.id.adView);
+
+        /* adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity{
                 // covers the screen.
             }
         });
+         */
         recyclerView=findViewById(R.id.recyclerView);
         toolbar=findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);

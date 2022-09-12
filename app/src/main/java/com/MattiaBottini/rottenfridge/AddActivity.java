@@ -3,6 +3,7 @@ package com.MattiaBottini.rottenfridge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import android.app.DatePickerDialog;
 import android.content.ActivityNotFoundException;
@@ -97,6 +98,8 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(AddActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                expiration_input.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_input_date));
+                expiration_input.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_calendar_month_focused), null, null, null);
             }
         });
 
@@ -125,6 +128,8 @@ public class AddActivity extends AppCompatActivity {
         String myFormat="dd/MM/yyyy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.ITALIAN);
         expiration_input.setText(dateFormat.format(myCalendar.getTime()));
+        expiration_input.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_input));
+        expiration_input.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_calendar_month_24), null, null, null);
     }
 
     @Override
