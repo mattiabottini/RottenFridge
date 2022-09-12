@@ -73,20 +73,17 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onAdClicked() {
                 // Code to be executed when the user clicks on an ad.
-                Toast.makeText(MainActivity.this, "Ad clicked", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAdClosed() {
                 // Code to be executed when the user is about to return
                 // to the app after tapping on an ad.
-                Toast.makeText(MainActivity.this, "Ad closed", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAdFailedToLoad(LoadAdError adError) {
                 // Code to be executed when an ad request fails.
-                Toast.makeText(MainActivity.this, "Failed to load Ad", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -98,14 +95,12 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
-                Toast.makeText(MainActivity.this, "Ad loaded", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAdOpened() {
                 // Code to be executed when an ad opens an overlay that
                 // covers the screen.
-                Toast.makeText(MainActivity.this, "Ad opened", Toast.LENGTH_SHORT).show();
             }
         });
         recyclerView=findViewById(R.id.recyclerView);
