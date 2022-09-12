@@ -117,7 +117,7 @@ public class ProductsActivity extends AppCompatActivity {
 
         getAndSetIntentData();
         String url = "https://storage.googleapis.com/fleet-volt-352308.appspot.com/" + prod_name.getText().toString().toLowerCase() + ".png";
-        Picasso.get().load(url).into(imgProd);
+        Picasso.get().load(url).placeholder(R.drawable.ic_prodotti).error(R.drawable.ic_prodotti).into(imgProd);
 
         textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
