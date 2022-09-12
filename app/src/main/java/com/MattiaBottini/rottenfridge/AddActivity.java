@@ -94,6 +94,8 @@ public class AddActivity extends AppCompatActivity {
                 updateLabel();
             }
         };
+
+
         expiration_input.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

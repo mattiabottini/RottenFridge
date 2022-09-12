@@ -82,6 +82,8 @@
         android:layout_centerHorizontal="true"
         />
 
+    <!-- Replace id with banner ID -->
+    <!-- If testing use: ca-app-pub-3940256099942544/6300978111 -->
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"
@@ -90,6 +92,6 @@
         android:layout_centerHorizontal="true"
         android:translationY="-10dp"
         app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
+        app:adUnitId="@string/idBannerTest"></com.google.android.gms.ads.AdView>
 </RelativeLayout>
     </ScrollView>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Rotten Fridge</string>
+    <string name="idBannerTest">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="idBannerReal">ca-app-pub-1489883441987644/3018855207</string>
+    <string name="idAppTest">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="idAppReal">ca-app-pub-1489883441987644~2839979545</string>
 </resources>
