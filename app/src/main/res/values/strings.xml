@@ -8,7 +8,8 @@
     <string name="rottenWhat">Rotten Fridge is an app that allows to manage your fridge in a virtual way.
         \n\nYou insert the products with their expiration date and quantity, then the app will show them to you!</string>
     <string name="want_to_add">If you want to add a product, \njust click on this button!</string>
-    <string name="addProduct">Complete all the fields and click "'"Add"'"</string>
+    <string name="addProduct2">Insert the "Product Name" in the singular form!</string>
+    <string name="addProduct">Complete all the fields and click <b>ADD</b></string>
     <string name="mainSee">Now you can see all the products in your fridge!\n\n
     If you want more details about a product, \n just click on it!</string>
     <string name="prodDetailsOpen">Now you can see all the details about the product!\n\nIf you want to update or delete it, \nuse these buttons!</string>

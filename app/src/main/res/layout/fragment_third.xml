@@ -9,21 +9,37 @@
     android:padding="16dp"
     android:background="@drawable/intro2"
     >
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/description2TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/custom_text_view"
+        android:padding="20dp"
+        android:text="@string/addProduct2"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description2TextView"
         android:layout_gravity="center"
-        android:layout_marginTop="500dp"
-        android:text="@string/addProduct"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        android:textAlignment="center"
         android:background="@drawable/custom_text_view"
-        />
-
+        android:padding="20dp"
+        android:text="@string/addProduct"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+</RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
