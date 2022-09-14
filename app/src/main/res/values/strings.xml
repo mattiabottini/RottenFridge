@@ -4,4 +4,17 @@
     <string name="idBannerReal">ca-app-pub-1489883441987644/3018855207</string>
     <string name="idAppTest">ca-app-pub-3940256099942544~3347511713</string>
     <string name="idAppReal">ca-app-pub-1489883441987644~2839979545</string>
+    <string name="welcome">Welcome!\n</string>
+    <string name="rottenWhat">Rotten Fridge is an app that allows to manage your fridge in a virtual way.
+        \n\nYou insert the products with their expiration date and quantity, then the app will show them to you!</string>
+    <string name="want_to_add">If you want to add a product, \njust click on this button!</string>
+    <string name="addProduct">Complete all the fields and click "'"Add"'"</string>
+    <string name="mainSee">Now you can see all the products in your fridge!\n\n
+    If you want more details about a product, \n just click on it!</string>
+    <string name="prodDetailsOpen">Now you can see all the details about the product!\n\nIf you want to update or delete it, \nuse these buttons!</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="done">Done</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

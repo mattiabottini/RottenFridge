@@ -32,6 +32,11 @@
             android:parentActivityName="com.MattiaBottini.rottenfridge.MainActivity"
             />
         <activity
+            android:name="com.MattiaBottini.rottenfridge.IntroView"
+            android:exported="false"
+            android:parentActivityName="com.MattiaBottini.rottenfridge.IntroView"
+            />
+        <activity
             android:name="com.MattiaBottini.rottenfridge.MainActivity"
             android:exported="true">
             <intent-filter>

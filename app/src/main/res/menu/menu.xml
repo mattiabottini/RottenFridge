@@ -14,5 +14,11 @@
         android:id="@+id/deleteAll"
         app:showAsAction="ifRoom"
         />
+    <item
+        android:title="Help"
+        android:icon="@drawable/ic_baseline_help_24"
+        android:id="@+id/help"
+        app:showAsAction="ifRoom"
+        />
 
 </menu>

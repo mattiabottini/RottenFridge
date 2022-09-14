@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -62,6 +64,13 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences preferences = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = preferences.getBoolean("firstStart",true);
+
+       if(firstStart){
+        introLoader();
+        }
+
         adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
@@ -104,6 +113,7 @@ public class MainActivity extends AppCompatActivity{
                 // covers the screen.
             }
         });
+
         recyclerView=findViewById(R.id.recyclerView);
         toolbar=findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
@@ -138,7 +148,11 @@ public class MainActivity extends AppCompatActivity{
                 break;
 
             case R.id.deleteAll:
-                    confirmDialog();
+                confirmDialog();
+                break;
+
+            case R.id.help:
+                introLoaderForMenu();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -191,6 +205,20 @@ public class MainActivity extends AppCompatActivity{
         });
 
         builder.create().show();
+    }
+
+    private void introLoader(){
+        SharedPreferences preferences = getSharedPreferences("prefs",MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
+        introLoaderForMenu();
+    }
+
+    private void introLoaderForMenu(){
+        Intent intent= new Intent(MainActivity.this, IntroView.class);
+        startActivity(intent);
+        finish();
     }
 
 
